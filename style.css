@@ -115,7 +115,9 @@ span{
     transition: 0.4s ease-in-out;
 }
 .home-img img:hover{
-    box-shadow: 0 0 25px var(--main-color);
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color),
+                0 0 100px var(--main-color);
 }
 .home-content p{
     font-size: 1.5rem;
@@ -132,6 +134,7 @@ span{
     background: transparent;
     border: 2px solid var(--main-color);
     font-size: 2.5rem;
+    border-radius: 50%;
     color: var(--main-color);
     margin: 3rem 1.5rem 3rem 0;
     transition: 0.3s ease-in-out;
@@ -203,44 +206,7 @@ text-animation::before{
         border-left: 2px solid var(--main-color);
     }
 }
-@keyframes words{
-    0%,
-    20% {
-        content:"frontend Disainer";
-    }
-    21%,40%{
-        content: "Web Disainer";
-    }
-    41%,60%{
-        content: "Mahasiswa";
-    }
-    61%,100%{
-        content: "UI/UX Disainer";
-    }
-}
-@keyframes typing{
-    10%,
-    15%,
-    20%,
-    25%,
-    30%,
-    35%,
-    40%,
-    45%,
-    50%,
-    55%,
-    60%,
-    65%,
-    70%,
-    75%,
-    90%,
-    95%{
-        width: 0;
-    }
-    5%,20%,25%,40%,45%,60%,65%,80%,85%{
-        width: calc(100%+8px);
-    }
-}
+
 .heading{
     font-size: 8rem;
     text-align: center;
@@ -266,10 +232,124 @@ text-animation::before{
     width: 5px;
     height: 100%;
     background-color: var(--main-color);
-    left: calc(50%-1px);
+    left: calc(50% - 10px);
 }
 .timeline-item{
     margin-bottom: 40px;
     width: 100%;
     position: relative;
+}
+.timeline-item:last-child{
+    margin-bottom:0 ;
+}
+.timeline-item:nth-child(odd){
+    padding-right: calc(50% + 30px);
+    text-align: right;
+}
+.timeline-item:nth-child(even){
+    padding-left: calc(50% + 30px);
+}
+.timeline-dot{
+    height: 21px;
+    width: 21px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color);
+    position: absolute;
+    left: calc(50% - 10px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+.timeline-date{
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    margin: 6px 0 15px;
+}
+.timeline-content{
+    background-color: var(--bg-color);
+    border: 3px solid var(--main-color);
+    padding: 30px 50px;
+    border-radius: 4rem;
+    box-shadow: 0 0 10px var(--main-color);
+    cursor: pointer;
+    transition: 0.3 ease-in-out;
+}
+.timeline-content:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-color);
+}
+.timeline-content h3{
+    font-size: 20px;
+    color: white;
+    margin: 0 0 10px;
+    font-weight: 300;
+    line-height: 22px;
+}
+.timeline-content p{
+    color: white;
+    font-size: 16px;
+    font-weight: 300px;
+    line-height: 22px;
+}
+
+::-webkit-scrollbar{
+    width:15px
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+}
+::-webkit-scrollbar-track{
+    background-color: var(--bg-color);
+    width: 50px;
+}
+.services{
+    background: var(--bg-color);
+    color: black;
+}
+.services h2{
+    margin-bottom: 5rem;
+    color: white;
+}
+.services-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 2.5rem;
+    font-size: 60px;
+}
+.service-box{
+    background-color: var(--main-color);
+    height: 300px;
+    border-radius: 3rem;
+    border: 5px solid transparent;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.service-box:hover{
+    background: white;
+    color: black;
+    border: 5px solid var(--main-color);
+    transform: scale(1.03);
+}
+.service-box .service-info{
+    display:grid;
+    flex-direction: column;
+    text-align: left;
+    max-height: 200px;
+    justify-content: left;
+    align-items: baseline;
+    padding: 5rem 5rem;
+}
+.service-info h4{
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 2;
+}
+.service-info p{
+    font-size: 1.6rem;
+    font-weight: 600;
+    max-height: 100px;
+    line-height: 1.7;
+    margin: 60px;
 }
